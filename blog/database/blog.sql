@@ -66,10 +66,10 @@ CREATE TABLE b_board_like (
 -- 게시판 댓글 테이블 생성
 CREATE TABLE b_com (
     com_id INT PRIMARY KEY,
-    board INT NOT NULL,
+    board_id INT NOT NULL,
     com_content VARCHAR2(2000) NOT NULL,
     com_created DATE NOT NULL,
-    FOREIGN KEY (board) REFERENCES b_board(board_id)
+    FOREIGN KEY (board_id) REFERENCES b_board(board_id)
 );
 
 -- 댓글 좋아요 테이블 생성
@@ -205,3 +205,4 @@ SELECT * FROM b_user;
 INSERT INTO b_user (blog_id, password, nickname, email, created, info)
 VALUES ('abc123', 'pass123', '갈색양말', 'abc@gmail.com', sysdate, '');
 
+SELECT blog_id FROM b_user;
